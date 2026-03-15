@@ -1,70 +1,58 @@
+import { useState } from "react";
+
 function App() {
+  const [tasks, setTasks] = useState([]);
+  const [input, setInput] = useState("");
+
+  const addTask = () => {
+    if (input.trim() === "") return;
+    setTasks([...tasks, input.trim()]);
+    setInput("");
+  };
+
+  const removeTask = (index) => {
+    setTasks(tasks.filter((_, i) => i !== index));
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
-      {/* Header */}
-      <header className="w-full bg-purple-600 text-white p-4 mb-6 rounded">
-        <h1 className="text-2xl font-bold">FlowTask</h1>
-        <p className="text-sm">Görevlerinizi kolayca yönetin</p>
-      </header>
+    <div className="min-h-screen bg-[#16171d] text-[#9ca3af] flex flex-col items-center p-6">
+      <h1 className="text-4xl font-bold mb-2 text-[#f3f4f6]">FlowTask</h1>
+      <p className="mb-6 text-lg">Görev yönetim uygulaması</p>
 
       {/* Input ve Ekle Butonu */}
-      <div className="w-full flex mb-4 gap-2">
+      <div className="flex gap-2 mb-4 w-full max-w-md">
         <input
           type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
           placeholder="Yeni görev girin..."
-          className="flex-1 p-2 border rounded border-gray-300"
+          className="flex-1 p-2 rounded border border-[#2e303a] bg-[#1f2028] text-[#f3f4f6]"
         />
-        <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+        <button
+          onClick={addTask}
+          className="px-4 py-2 rounded bg-[#c084fc] text-[#f3f4f6] hover:bg-[#a855f7] transition"
+        >
           Ekle
         </button>
       </div>
 
       {/* Görev Listesi */}
-      <div className="w-full mb-4 space-y-2">
-        <div className="flex justify-between items-center bg-white p-2 rounded shadow">
-          <span>a</span>
-          <div className="flex gap-2">
-            <button className="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500">
-              Düzenle
-            </button>
-            <button className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+      <div className="w-full max-w-md space-y-2">
+        {tasks.map((task, index) => (
+          <div
+            key={index}
+            className="flex justify-between items-center p-2 rounded bg-[#1f2028] border border-[#2e303a] shadow"
+          >
+            <span>{task}</span>
+            <button
+              onClick={() => removeTask(index)}
+              className="px-3 py-1 rounded bg-red-500 text-white hover:bg-red-600 transition"
+            >
               Sil
             </button>
           </div>
-        </div>
-
-        <div className="flex justify-between items-center bg-white p-2 rounded shadow">
-          <span>d</span>
-          <div className="flex gap-2">
-            <button className="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500">
-              Düzenle
-            </button>
-            <button className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
-              Sil
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
-
-      {/* İşlem Butonları */}
-      <div className="w-full flex gap-2 mb-4">
-        <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
-          Yeni Görev Ekle (Deneme)
-        </button>
-        <button className="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">
-          Temizle
-        </button>
-      </div>
-
-      {/* Bilgi kutusu */}
-      <div className="w-full bg-blue-100 text-blue-700 p-2 rounded mb-4">
-        Bu bir örnek bilgi kutusudur.
-      </div>
-
-      {/* Footer */}
-      <footer className="w-full bg-gray-200 text-gray-600 text-center p-4 rounded">
-        © 2026 FlowTask. Tüm hakları saklıdır.
-      </footer>
     </div>
   );
 }
