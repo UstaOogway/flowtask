@@ -10,19 +10,56 @@
   --code-bg: #1f2028;
   --accent: #c084fc;
   --accent-bg: rgba(192, 132, 252, 0.15);
+
   --shadow: rgba(0,0,0,0.4) 0 10px 15px -3px,
             rgba(0,0,0,0.25) 0 4px 6px -2px;
 }
 
+/* Genel sayfa */
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: system-ui, sans-serif;
+  line-height: 1.5;
 }
 
+/* React root alanı */
 #root {
   max-width: 1126px;
   margin: 0 auto;
   min-height: 100vh;
+  padding: 20px;
+}
+
+/* Başlıklar */
+h1, h2, h3 {
+  color: var(--text-h);
+  margin: 0;
+}
+
+/* Kart görünümü */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* Input alanı */
+input {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Butonlar */
+button {
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
 }
