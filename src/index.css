@@ -7,9 +7,7 @@
   --text-h: #f3f4f6;
   --bg: #16171d;
   --border: #2e303a;
-  --code-bg: #1f2028;
   --accent: #c084fc;
-  --accent-bg: rgba(192, 132, 252, 0.15);
 
   --shadow: rgba(0,0,0,0.4) 0 10px 15px -3px,
             rgba(0,0,0,0.25) 0 4px 6px -2px;
@@ -21,45 +19,57 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: system-ui, sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* React root alanı */
 #root {
-  max-width: 1126px;
+  max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
-  padding: 20px;
+  padding: 40px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Başlıklar */
-h1, h2, h3 {
+/* Başlık */
+h1 {
+  font-size: 64px;
+  font-weight: 700;
   color: var(--text-h);
-  margin: 0;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
-/* Kart görünümü */
+/* Alt başlık */
+p {
+  text-align: center;
+}
+
+/* Kartlar */
 .card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 12px;
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
   box-shadow: var(--shadow);
 }
 
-/* Input alanı */
+/* Input */
 input {
   border-radius: 12px;
   border: 1px solid var(--border);
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
 }
 
-/* Butonlar */
+/* Buton */
 button {
   border-radius: 12px;
   transition: all 0.2s ease;
 }
 
 button:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
