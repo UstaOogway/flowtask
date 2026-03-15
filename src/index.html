@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowTask Projesi</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen font-sans">
+
+  <!-- Header -->
+  <header class="bg-purple-600 text-white p-6 shadow-md">
+    <h1 class="text-3xl font-bold">FlowTask</h1>
+    <p class="text-purple-200 mt-1">Görevlerinizi kolayca yönetin</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="p-6">
+
+    <!-- Görev Ekleme Alanı -->
+    <div class="mb-6 flex flex-col sm:flex-row gap-2">
+      <input type="text" id="taskInput" placeholder="Yeni görev girin..." 
+             class="flex-1 p-2 border rounded">
+      <button id="addTaskBtn" 
+              class="w-full sm:w-auto bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        Ekle
+      </button>
+    </div>
+
+    <!-- Görev Listesi -->
+    <ul id="taskList" class="list-disc list-inside text-gray-700 mt-4">
+      <!-- JS ile görevler buraya eklenecek -->
+    </ul>
+
+    <!-- Örnek butonlar -->
+    <div class="flex gap-4 mt-6">
+      <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+        Yeni Görev Ekle (Deneme)
+      </button>
+      <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+        Temizle
+      </button>
+    </div>
+
+    <!-- Örnek bilgi kutusu -->
+    <div class="bg-blue-100 text-blue-800 p-4 rounded-lg mt-6 shadow-inner">
+      Bu bir örnek bilgi kutusudur.
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-gray-700 p-4 mt-6 text-center">
+    &copy; 2026 FlowTask. Tüm hakları saklıdır.
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+  <div class="flex gap-4 mt-6">
+  <button id="clearTasks" 
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+    Tümünü Temizle
+  </button>
+</div>
+
+</body>
+</html>
