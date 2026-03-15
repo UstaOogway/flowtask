@@ -1,7 +1,4 @@
-/* Tailwind direktifleri */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 /* Temel renk ve font değişkenleri */
 :root {
